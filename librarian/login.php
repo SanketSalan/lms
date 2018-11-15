@@ -24,7 +24,6 @@ include "connection.php";
 <div class="col-lg-12 text-center ">
     <h1 style="font-family:Lucida Console">Library Management System</h1>
 </div>
-
 <br>
 
 <body class="login">
@@ -34,7 +33,7 @@ include "connection.php";
 
     <section class="login_content">
         <form name="form1" action="" method="post">
-            <h1>Librarian Login Form</h1>
+            <h1><center>Librarian Login Form</h1>
 
             <div>
                 <input type="text" name="username" class="form-control" placeholder="Username" required=""/>
@@ -52,7 +51,7 @@ include "connection.php";
 
             <div class="separator">
                 <p class="change_link">New to site?
-                    <a href="registration.html"> Create Account </a>
+                    <a href="librarian_registration.php"> Create Account </a>
                 </p>
 
                 <div class="clearfix"></div>

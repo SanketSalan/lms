@@ -10,7 +10,7 @@ include "connection.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Student Registration Form | LMS </title>
+    <title>Librarian Registration Form | LMS </title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@ include "connection.php";
 
             <section class="login_content" style="margin-top: -40px;">
                 <form name="form1" action="" method="post">
-                    <h2>User Registration Form</h2><br>
+                    <h2>Librarian Registration Form</h2><br>
 
                     <div>
                         <input type="text" class="form-control" placeholder="FirstName" name="firstname" required=""/>
@@ -53,12 +53,7 @@ include "connection.php";
                     <div>
                         <input type="text" class="form-control" placeholder="contact" name="contact" required=""/>
                     </div>
-                    <div>
-                        <input type="text" class="form-control" placeholder="SEM" name="sem" required=""/>
-                    </div>
-                    <div>
-                        <input type="text" class="form-control" placeholder="Enrollment No" name="enrollmentno" required=""/>
-                    </div>
+                    
                     <div class="col-lg-12  col-lg-push-3">
                         <input class="btn btn-default submit " type="submit" name="submit1" value="Register">
                     </div>
@@ -70,13 +65,13 @@ include "connection.php";
 if(isset($_POST["submit1"]))
 {
 	
-	mysqli_query($link,"insert into student_registration values('','$_POST[firstname]','$_POST[lastname]','$_POST[username]','$_POST[password]','$_POST[email]','$_POST[contact]','$_POST[sem]','$_POST[enrollmentno]','no')");
+	mysqli_query($link,"insert into librarian_registration values('','$_POST[firstname]','$_POST[lastname]','$_POST[username]','$_POST[password]','$_POST[email]','$_POST[contact]')");
 	 
 	 
 ?>
 	 
 <div class="alert alert-success col-lg-12 col-lg-push-0">
-        Registration successfull
+        Registration successfully
     </div>
 <?php
 }

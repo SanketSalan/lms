@@ -102,18 +102,28 @@ include "connection.php";
         <!-- /page content -->
 <?php
 if(isset($_POST["submit1"]))
-{
+{   
+	$tm=md5(time());
 	$fnm=$_FILES["f1"]["name"];
 	$dst="./books_image/".$tm.$fnm;
 	$dst1="./books_image/".$tm.$fnm;
 	
-	move_uploaded_file($FILES["f1"]["tmp_name"],$dst);
-    mysqli_query($link,"insert into add_books values('booksname','$dst1','bauthorname','pname','bpurchasedt','bprice','bqty','aqty','$_SESSION[librarian]')");
+	move_uploaded_file($_FILES["f1"]["tmp_name"],$dst);
+    mysqli_query($link,"insert into add_books values('','$_POST[booksname]','$dst1','$_POST[bauthorname]','$_POST[pname]','$_POST[bpurchasedt]','$_POST[bprice]','$_POST[bqty]','$_POST[aqty]','$_SESSION[librarian]')");
     ?>
-	
-	}
+<script type="text/javascript">
+   alert("books insert successfull");
 
-        <!-- footer content -->
+
+
+</script>
+<form action="display_books.php">
+    <input type="submit" value="Display books" />
+</form>
+	<?php
+}
+ ?> 
+  <!-- footer content -->
         <?php
 		include "footer.php";
         ?>
